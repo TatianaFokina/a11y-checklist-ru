@@ -77,8 +77,8 @@ gulp.task('__compileStylus', function () {
 		.pipe(browserSync.reload({stream: true}));
 });
 
-// Stylus (all.styl → dist/)
-gulp.task('__compileStylus_dist', function () {
+// Stylus (all.styl → docs/)
+gulp.task('__compileStylus_docs', function () {
 	var $postcss_plugins = [
 		postcss_inline_svg,
 		mergeRules
@@ -96,7 +96,7 @@ gulp.task('__compileStylus_dist', function () {
 			cascade: false
 		}))
 		.pipe(gulp_postcss($postcss_plugins))
-		.pipe(gulp.dest('dist/css'))
+		.pipe(gulp.dest('docs/css'))
 		.pipe(browserSync.reload({stream: true}));
 });
 
@@ -163,9 +163,9 @@ gulp.task('LiveReload', ['Build--Test'], function () {
 // ========================================================================
 // Удаление папок
 // ========================================================================
-// dist
-gulp.task('__delDist', function() {
-	return del.sync('dist');
+// docs
+gulp.task('__deldocs', function() {
+	return del.sync('docs');
 });
 // test
 gulp.task('__delTest', function() {
@@ -196,11 +196,11 @@ gulp.task('Build--Test', ['__compileStylus', '__compilePug'], function() {
 		.pipe(gulp.dest('test/imgs'));
 });
 
-// → "dist"
-gulp.task('Build', ['__delDist', '__compileStylus', '__compilePug'], function() {
+// → "docs"
+gulp.task('Build', ['__deldocs', '__compileStylus', '__compilePug'], function() {
 	// Шрифты
 	gulp.src('src/fonts/**/*')
-		.pipe(gulp.dest('dist/fonts'));
+		.pipe(gulp.dest('docs/fonts'));
 
 	// Favicons
 	gulp.src('src/favicons/**/*')
@@ -210,7 +210,7 @@ gulp.task('Build', ['__delDist', '__compileStylus', '__compilePug'], function() 
 			imagemin.optipng({optimizationLevel: 7}),
 			imagemin.svgo({plugins: [{removeViewBox: true}]})
 		])))
-		.pipe(gulp.dest('dist/favicons'));
+		.pipe(gulp.dest('docs/favicons'));
 
 	// Images (с оптимизацией)
 
@@ -222,11 +222,11 @@ gulp.task('Build', ['__delDist', '__compileStylus', '__compilePug'], function() 
 			imagemin.optipng({optimizationLevel: 7}),
 			imagemin.svgo({plugins: [{removeViewBox: true}]})
 		])))
-		.pipe(gulp.dest('dist/imgs'));
+		.pipe(gulp.dest('docs/imgs'));
 
 	// Copy html
 	gulp.src('test/**/*.html')
-		.pipe(gulp.dest("dist"));
+		.pipe(gulp.dest("docs"));
 
 	// CSS
 	var $postcss_plugins = [
@@ -241,11 +241,11 @@ gulp.task('Build', ['__delDist', '__compileStylus', '__compilePug'], function() 
 		// Сжимаем
 		.pipe(cssnano())
 		// Сохраняем в папку
-		.pipe(gulp.dest('dist/css'));
+		.pipe(gulp.dest('docs/css'));
 
 	// Copy .txt
 	gulp.src('src/*.txt')
-		.pipe(gulp.dest("dist"));
+		.pipe(gulp.dest("docs"));
 });
 
 
