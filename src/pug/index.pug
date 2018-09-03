@@ -1,0 +1,101 @@
+doctype html
+html(lang='ru')
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(http-equiv="x-ua-compatible" content="ie=edge")
+		title Чек-лист доступности A11Y
+		meta(name='description' content="Русский перевод чек-листа доступности A11Y")
+		link(href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;subset=cyrillic" rel="stylesheet")
+		link(rel="stylesheet" href="/css/styles.css")
+
+	body
+		.container
+			h1 Чек-лист доступности
+			p Чек-лист <a href="https://a11yproject.com/checklist" target="_blank" rel="noopener noreferrer">The A11Y Project</a>. Полный перевод на <a href="#" target="_blank" rel="noopener noreferrer">Medium</a>.
+			h2 Ориентиры
+			.checkbox-list
+
+				mixin checkbox-item($id, $val, $id2, $label, $text, $link, $textLink)
+					label(for=$id2).checkbox= $label
+						input(type="checkbox" id=$id value=$val).checkbox__input
+						span.checkbox__input-custom
+						span.checkbox__text= $text
+						a(href=$link target="_blank" rel="noopener noreferrer").checkbox__link= $textLink
+
+				.checkbox-item
+					+checkbox-item("r1", "1", "r1", "header role=''banner''.", "Область страницы, в которой содержится информация о сайте. Обычно шапка.")
+				.checkbox-item
+					+checkbox-item("r2", "2", "r2", "nav role=''navigation''.", "Содержит ссылки на разные страницы сайта, экраны приложений или разделы одного документа.")
+				.checkbox-item
+					+checkbox-item("r3", "3", "r3", "main role=''main''.", "Оборачивает главный, значимый контент документа. Используется один раз.")
+				.checkbox-item
+					+checkbox-item("r4", "4", "r4", "article role=''article''.", "Обозначает независимый пункт контента. На странице может быть несколько элементов с тегом article. Тег не считается ориентиром, но скринридеры могут проходить по этим тегам при навигации по разделам или ориентирам.")
+				.checkbox-item
+					+checkbox-item("r5", "5", "r5", "aside role=''complementary''.", "Блок, связанный с основным контентом, но визуально отделённый от него.")
+				.checkbox-item
+					+checkbox-item("r6", "6", "r6", "footer role=''contentinfo''.", "Содержит информацию о документе (копирайт, метаинформацию, информацию о компании и другую).")
+				.checkbox-item
+					+checkbox-item("r7", "7", "r7", "form role=''search''.", "Добавьте роль search для основного блока поиска.", "http://adrianroselli.com/2015/08/where-to-put-your-search-role.html", "Как это сделать")
+				h2 Атрибут языка
+				p Объявление атрибута языка в HTML позволяет скринридеру зачитывать текст с правильным произношением.
+				.checkbox-item
+					+checkbox-item("r8", "8", "r8", "html lang=''en''.", "Укажите язык при помощи атрибута lang внутри элемента html.")
+				h2 Структура документа
+				.checkbox-item
+					+checkbox-item("r9", "9", "r9", "Используйте семантические заголовки и соблюдайте логическую структуру.")
+				h2 Ссылки
+				.checkbox-item
+					+checkbox-item("r10", "10", "r10", "Убедитесь, что ссылкам задано состояние :focus.")
+				.checkbox-item
+					+checkbox-item("r11", "11", "r11", "Убедитесь, что ссылки легко распознать.")
+				.checkbox-item
+					+checkbox-item("r12", "12", "r12", "Разместите ссылку «К основному содержанию».", "", "https://a11yproject.com/posts/skip-nav-links/", "Подробнее о ссылке")
+				h2 Изображения
+				.checkbox-item
+					+checkbox-item("r13", "13", "r13", "Используйте подходящий текст в теге alt.", "", "https://a11yproject.com/posts/alt-text/", "Как использовать alt-текст")
+				h2 JavaScript
+				.checkbox-item
+					+checkbox-item("r14", "14", "r14", "Ненавязчивый JavaScript.", "Используйте ненавязчивый JavaScript. Не вызывайте функции в разметке.")
+				.checkbox-item
+					+checkbox-item("r15", "15", "r15", "Альтернативы JS.", "Используйте альтернативу JS для пользователей, которые отключили его, или в средах, где он недоступен.")
+				h2 Формы
+				.checkbox-item
+					+checkbox-item("r16", "16", "r16", "Логичная разметка.", "Логичный порядок вкладок форм.")
+				.checkbox-item
+					+checkbox-item("r17", "17", "r17", "Свяжите label со всеми контролами форм (input, select и другими).", "Например, <label for=''name''>Name:</label><input id=''name'' type=''text''>.")
+				.checkbox-item
+					+checkbox-item("r18", "18", "r18", "Убедитесь, что атрибут placeholder не используется вместо тега label.", "Исключение из этого правила — маленькие формы с одним или двумя полями, то есть поиск или формы входа.", "https://html.spec.whatwg.org/multipage/input.html#attr-input-placeholder", "WHATWG")
+				.checkbox-item
+					+checkbox-item("r19", "19", "r19", "Группы элементов формы должны быть объединены fieldset и описаны в legend.", "Важно для input type=''radio'' и input type=''checkbox''.")
+				h2 Медиа (видео и аудио)
+				p Предусмотрите текстовую альтернативу аудио-информации, которая будет доступна для глухих и слабослышащих. Это относится и к поисковым системам, которые тоже «не слышат».
+				.checkbox-item
+					+checkbox-item("r20", "20", "r20", "Сделайте расшифровку аудио.")
+				.checkbox-item
+					+checkbox-item("r21", "21", "r21", "Синхронизируйте в видео субтитры со звуком.")
+				h2 Цвет и контраст
+				.checkbox-item
+					+checkbox-item("r22", "22", "r22", "Протестируйте цветовой контраст.", "Лучше это сделать в самом начале, и убедиться, что цвет фона сайта достаточно контрастный. Это сделает его читабельным для всех. Contrast Ratio  —  один из инструментов для проверки контрастности цветов как для пользователей с нормальным зрением, так и для людей с дальтонизмом.", "http://contrast-ratio.com", "Contrast Ratio")
+				h2 Тест для дальтоников
+				p Протестируйте сайт для разных типов дальтонизма.
+				.checkbox-item
+					+checkbox-item("r23", "23", "r23", "Дейтеранопия.")
+				.checkbox-item
+					+checkbox-item("r24", "24", "r24", "Протанопия.")
+				.checkbox-item
+					+checkbox-item("r25", "25", "r25", "Тританопия.")
+				p Тест на виды дальтонизма можно сделать с помощью <a href="https://www.toptal.com/designers/colorfilter" target="_blank" rel="noopener noreferrer">этого инструмента</a>.Если вы пользователь Mac, то можно использовать стимулятор цветовой слепоты <a href="https://michelf.ca/projects/sim-daltonism/" target="_blank" rel="noopener noreferrer">Sim Daltonism</a> Мишеля Фортена.
+				h2 Тестирование
+				p Проверьте навигацию сайта с помощью разных инструментов. Например, используйте только клавиатуру или скринридер. Это поможет понять как слепые, слабовидящие и люди с ограниченной мобильностью взаимодействуют с ним.
+				.checkbox-item
+					+checkbox-item("r26", "26", "r26", "Используйте скринридер.")
+				.checkbox-item
+					+checkbox-item("r27", "27", "r27", "Используйте только клавиатуру.")
+
+		footer
+			.container.container-footer
+				a(href="" target="_blank" rel="noopener noreferrer") GitHub
+
+	script(src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+	script(src="//unpkg.com/focus-visible@latest/dist/focus-visible.min.js")

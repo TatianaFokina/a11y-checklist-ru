@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Чек-лист доступности A11Y</title>
+	<meta name="description" content="Русский перевод чек-листа доступности A11Y">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;amp;subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Чек-лист доступности</h1>
+		<p>Чек-лист <a href="https://a11yproject.com/checklist" target="_blank" rel="noopener noreferrer">The A11Y Project</a>. Полный перевод на <a href="#" target="_blank" rel="noopener noreferrer">Medium</a>.</p>
+		<h2>Ориентиры</h2>
+		<div class="checkbox-list">
+			<div class="checkbox-item"><label class="checkbox" for="r1">header role=''banner''.<input class="checkbox__input" type="checkbox" id="r1" value="1"><span class="checkbox__input-custom"></span><span class="checkbox__text">Область страницы, в
+						которой содержится информация о сайте. Обычно шапка.</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r2">nav role=''navigation''.<input class="checkbox__input" type="checkbox" id="r2" value="2"><span class="checkbox__input-custom"></span><span class="checkbox__text">Содержит ссылки на
+						разные страницы сайта, экраны приложений или разделы одного документа.</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r3">main role=''main''.<input class="checkbox__input" type="checkbox" id="r3" value="3"><span class="checkbox__input-custom"></span><span class="checkbox__text">Оборачивает главный, значимый
+						контент документа. Используется один раз.</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r4">article role=''article''.<input class="checkbox__input" type="checkbox" id="r4" value="4"><span class="checkbox__input-custom"></span><span class="checkbox__text">Обозначает независимый
+						пункт контента. На странице может быть несколько элементов с тегом article. Тег не считается ориентиром, но скринридеры могут проходить по этим тегам при навигации по разделам или ориентирам.</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r5">aside role=''complementary''.<input class="checkbox__input" type="checkbox" id="r5" value="5"><span class="checkbox__input-custom"></span><span class="checkbox__text">Блок, связанный с
+						основным контентом, но визуально отделённый от него.</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r6">footer role=''contentinfo''.<input class="checkbox__input" type="checkbox" id="r6" value="6"><span class="checkbox__input-custom"></span><span class="checkbox__text">Содержит информацию
+						о документе (копирайт, метаинформацию, информацию о компании и другую).</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r7">form role=''search''.<input class="checkbox__input" type="checkbox" id="r7" value="7"><span class="checkbox__input-custom"></span><span class="checkbox__text">Добавьте роль search для
+						основного блока поиска.</span><a class="checkbox__link" href="http://adrianroselli.com/2015/08/where-to-put-your-search-role.html" target="_blank" rel="noopener noreferrer">Как это сделать</a></label></div>
+			<h2>Атрибут языка</h2>
+			<p>Объявление атрибута языка в HTML позволяет скринридеру зачитывать текст с правильным произношением.</p>
+			<div class="checkbox-item"><label class="checkbox" for="r8">html lang=''en''.<input class="checkbox__input" type="checkbox" id="r8" value="8"><span class="checkbox__input-custom"></span><span class="checkbox__text">Укажите язык при помощи
+						атрибута lang внутри элемента html.</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<h2>Структура документа</h2>
+			<div class="checkbox-item"><label class="checkbox" for="r9">Используйте семантические заголовки и соблюдайте логическую структуру.<input class="checkbox__input" type="checkbox" id="r9" value="9"><span class="checkbox__input-custom"></span><span
+					    class="checkbox__text"></span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<h2>Ссылки</h2>
+			<div class="checkbox-item"><label class="checkbox" for="r10">Убедитесь, что ссылкам задано состояние :focus.<input class="checkbox__input" type="checkbox" id="r10" value="10"><span class="checkbox__input-custom"></span><span class="checkbox__text"></span><a
+					    class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r11">Убедитесь, что ссылки легко распознать.<input class="checkbox__input" type="checkbox" id="r11" value="11"><span class="checkbox__input-custom"></span><span class="checkbox__text"></span><a
+					    class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r12">Разместите ссылку «К основному содержанию».<input class="checkbox__input" type="checkbox" id="r12" value="12"><span class="checkbox__input-custom"></span><span class="checkbox__text"></span><a
+					    class="checkbox__link" href="https://a11yproject.com/posts/skip-nav-links/" target="_blank" rel="noopener noreferrer">Подробнее о ссылке</a></label></div>
+			<h2>Изображения</h2>
+			<div class="checkbox-item"><label class="checkbox" for="r13">Используйте подходящий текст в теге alt.<input class="checkbox__input" type="checkbox" id="r13" value="13"><span class="checkbox__input-custom"></span><span class="checkbox__text"></span><a
+					    class="checkbox__link" href="https://a11yproject.com/posts/alt-text/" target="_blank" rel="noopener noreferrer">Как использовать alt-текст</a></label></div>
+			<h2>JavaScript</h2>
+			<div class="checkbox-item"><label class="checkbox" for="r14">Ненавязчивый JavaScript.<input class="checkbox__input" type="checkbox" id="r14" value="14"><span class="checkbox__input-custom"></span><span class="checkbox__text">Используйте
+						ненавязчивый JavaScript. Не вызывайте функции в разметке.</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r15">Альтернативы JS.<input class="checkbox__input" type="checkbox" id="r15" value="15"><span class="checkbox__input-custom"></span><span class="checkbox__text">Используйте альтернативу JS
+						для пользователей, которые отключили его, или в средах, где он недоступен.</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<h2>Формы</h2>
+			<div class="checkbox-item"><label class="checkbox" for="r16">Логичная разметка.<input class="checkbox__input" type="checkbox" id="r16" value="16"><span class="checkbox__input-custom"></span><span class="checkbox__text">Логичный порядок вкладок
+						форм.</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r17">Свяжите label со всеми контролами форм (input, select и другими).<input class="checkbox__input" type="checkbox" id="r17" value="17"><span class="checkbox__input-custom"></span><span
+					    class="checkbox__text">Например, &lt;label for=''name''&gt;Name:&lt;/label&gt;&lt;input id=''name'' type=''text''&gt;.</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r18">Убедитесь, что атрибут placeholder не используется вместо тега label.<input class="checkbox__input" type="checkbox" id="r18" value="18"><span class="checkbox__input-custom"></span><span
+					    class="checkbox__text">Исключение из этого правила — маленькие формы с одним или двумя полями, то есть поиск или формы входа.</span><a class="checkbox__link" href="https://html.spec.whatwg.org/multipage/input.html#attr-input-placeholder"
+					    target="_blank" rel="noopener noreferrer">WHATWG</a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r19">Группы элементов формы должны быть объединены fieldset и описаны в legend.<input class="checkbox__input" type="checkbox" id="r19" value="19"><span class="checkbox__input-custom"></span><span
+					    class="checkbox__text">Важно для input type=''radio'' и input type=''checkbox''.</span><a class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<h2>Медиа (видео и аудио)</h2>
+			<p>Предусмотрите текстовую альтернативу аудио-информации, которая будет доступна для глухих и слабослышащих. Это относится и к поисковым системам, которые тоже «не слышат».</p>
+			<div class="checkbox-item"><label class="checkbox" for="r20">Сделайте расшифровку аудио.<input class="checkbox__input" type="checkbox" id="r20" value="20"><span class="checkbox__input-custom"></span><span class="checkbox__text"></span><a class="checkbox__link"
+					    target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r21">Синхронизируйте в видео субтитры со звуком.<input class="checkbox__input" type="checkbox" id="r21" value="21"><span class="checkbox__input-custom"></span><span class="checkbox__text"></span><a
+					    class="checkbox__link" target="_blank" rel="noopener noreferrer"></a></label></div>
+			<h2>Цвет и контраст</h2>
+			<div class="checkbox-item"><label class="checkbox" for="r22">Протестируйте цветовой контраст.<input class="checkbox__input" type="checkbox" id="r22" value="22"><span class="checkbox__input-custom"></span><span class="checkbox__text">Лучше это
+						сделать в самом начале, и убедиться, что цвет фона сайта достаточно контрастный. Это сделает его читабельным для всех. Contrast Ratio  —  один из инструментов для проверки контрастности цветов как для пользователей с нормальным зрением, так и
+						для людей с дальтонизмом.</span><a class="checkbox__link" href="http://contrast-ratio.com" target="_blank" rel="noopener noreferrer">Contrast Ratio</a></label></div>
+			<h2>Тест для дальтоников</h2>
+			<p>Протестируйте сайт для разных типов дальтонизма.</p>
+			<div class="checkbox-item"><label class="checkbox" for="r23">Дейтеранопия.<input class="checkbox__input" type="checkbox" id="r23" value="23"><span class="checkbox__input-custom"></span><span class="checkbox__text"></span><a class="checkbox__link"
+					    target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r24">Протанопия.<input class="checkbox__input" type="checkbox" id="r24" value="24"><span class="checkbox__input-custom"></span><span class="checkbox__text"></span><a class="checkbox__link"
+					    target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r25">Тританопия.<input class="checkbox__input" type="checkbox" id="r25" value="25"><span class="checkbox__input-custom"></span><span class="checkbox__text"></span><a class="checkbox__link"
+					    target="_blank" rel="noopener noreferrer"></a></label></div>
+			<p>Тест на виды дальтонизма можно сделать с помощью <a href="https://www.toptal.com/designers/colorfilter" target="_blank" rel="noopener noreferrer">этого инструмента</a>.Если вы пользователь Mac, то можно использовать стимулятор цветовой слепоты
+				<a href="https://michelf.ca/projects/sim-daltonism/" target="_blank" rel="noopener noreferrer">Sim Daltonism</a> Мишеля Фортена.</p>
+			<h2>Тестирование</h2>
+			<p>Проверьте навигацию сайта с помощью разных инструментов. Например, используйте только клавиатуру или скринридер. Это поможет понять как слепые, слабовидящие и люди с ограниченной мобильностью взаимодействуют с ним.</p>
+			<div class="checkbox-item"><label class="checkbox" for="r26">Используйте скринридер.<input class="checkbox__input" type="checkbox" id="r26" value="26"><span class="checkbox__input-custom"></span><span class="checkbox__text"></span><a class="checkbox__link"
+					    target="_blank" rel="noopener noreferrer"></a></label></div>
+			<div class="checkbox-item"><label class="checkbox" for="r27">Используйте только клавиатуру.<input class="checkbox__input" type="checkbox" id="r27" value="27"><span class="checkbox__input-custom"></span><span class="checkbox__text"></span><a class="checkbox__link"
+					    target="_blank" rel="noopener noreferrer"></a></label></div>
+		</div>
+	</div>
+	<footer>
+		<div class="container container-footer"><a href="" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+	</footer>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//unpkg.com/focus-visible@latest/dist/focus-visible.min.js"></script>
+
+</html>

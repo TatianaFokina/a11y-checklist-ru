@@ -1,0 +1,48 @@
+{
+  "name": "A11-checklist-ru",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "css-mqpacker": "^6.0.2",
+    "del": "^3.0.0",
+    "graceful-fs": "^4.1.11",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^0.4.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-modify-css-urls": "^0.2.2",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-pug-beautify": "0.0.1",
+    "gulp-purifycss": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "imagemin-gifsicle": "^5.1.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-optipng": "^5.2.1",
+    "imagemin-pngquant": "^5.0.1",
+    "imagemin-svgo": "^5.2.2",
+    "minimatch": "^3.0.4",
+    "postcss-data-uri": "^1.0.3",
+    "postcss-inline-svg": "^3.0.0",
+    "postcss-svgo": "^2.1.6"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "postcss-merge-rules": "^2.1.2"
+  }
+}

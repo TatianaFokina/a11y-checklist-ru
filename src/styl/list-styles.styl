@@ -1,0 +1,81 @@
+// Common styles
+.checkbox
+	padding-left 33px
+	display block
+	position relative
+	&-list
+		display flex
+		flex-direction column
+	&-item
+		margin-bottom 0.875rem
+
+// Checkbox styles
+
+// Hidden native checkbox
+input
+	position absolute
+	opacity 0
+
+// Custom checkbox styles
+.checkbox-custom
+	content ""
+	position absolute
+	left 4px
+	top 2px
+	width 8px
+	height 8px
+	border-width 0 3px 3px 0
+	transform rotate(45deg)
+
+.checkbox__input-custom
+	position absolute
+	top 0
+	left 0
+	height 19px
+	width @height
+	border 2px solid $input-color
+	cursor pointer
+	transition all .3s ease-out
+	&:hover
+		background $input-color-hover
+	&:after
+		content ""
+		position absolute
+		display none
+		left 4px
+		top 2px
+		width 8px
+		height 8px
+		border solid $input-color-checkmark
+		border-width 0 3px 3px 0
+		transform rotate(45deg)
+	&:hover:after
+		display block
+		content ""
+		position absolute
+		left 4px
+		top 2px
+		width 8px
+		height 8px
+		border solid $color-checkmark-hover
+		border-width 0 3px 3px 0
+		transform rotate(45deg)
+
+[type=checkbox]:checked ~ .checkbox__input-custom
+	background $input-color-checked
+	border 2px solid $input-color-checkmark
+	&:after
+		display block
+
+.checkbox
+	&__text
+		display flex
+		color $span-color
+	&__text
+	&__link
+		font-size 0.875rem
+
+// Keyboard outline
+.focus-visible ~ .checkbox__input-custom
+	outline 3px solid $input-color-checkmark
+	outline-offset -2px
